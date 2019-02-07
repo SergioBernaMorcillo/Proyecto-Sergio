@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Only Navigation Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/ordenador.css">
+    <link rel="stylesheet" href="css/tablet.css">
+    <link rel="stylesheet" href="css/movil.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <label for="mostrar-menu" class="mostrar-menu"><span class="icon-menu"></span></label>
+            <input type="checkbox" id="mostrar-menu" role="button">
+            <ul id="opciones">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Compartir</a></li>
+                <li><a href="#">Iniciar Sesion</i></a></li>
+                <li><a href="#">Registrarse</a></li>
+                <li class="submenu"><a href="#">Nombre de usuario ⇣ <span class="icon-down-open"></span></a>
+                    <ul>
+                        <li><a href="#">Usuarios</a></li>
+                        <li><a href="#">Reportes</a></li>
+                        <li><a href="#">Cerrar Sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="imgCabecera">
+            <img src="img/portada meme2.jpg">
+        </div>
+    </header>
+    <section>
+        <aside>
+            <h3 class="titulo-categorias">Categorias</h3>
+            <div class="categorias">
+                <p class="categoria1"><button><span>Random</span></button></p>
+                <p class="categoria2"><button><span>Deporte</span></button></p>
+                <p class="categoria3"><button><span>Operación Triunfo</span></button></p>
+                <p class="categoria4"><button><span>Trollface</span></button></p>
+            </div>
+        </aside>
+        <p>cosas varias</p>
+    </section>
+    <footer>
+        <p>Esto es el footer</p>
+        <ul>
+            <li class="contacto"><a href="#"><span>Contacto</span></a></li>
+            <li class="politica"><a href="#"><span>Politica de privacidad</span></a></li>
+        </ul>
+    </footer>
+</body>
+<script src="menu.js"></script>
+
+</html>

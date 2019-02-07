@@ -1,0 +1,224 @@
+@media screen and (max-width : 420px) {
+    * {
+        font-size: 12px;
+    }
+
+    body {
+        width: 100%;
+        margin: auto;
+    }
+
+    .menu {
+        min-width: 320px;
+    }
+
+    .mostrar-menu {
+        cursor: pointer;
+    }
+
+    .menu ul {
+        z-index: 10;
+        display: none;
+    }
+
+    .menu ul li {
+        margin-bottom: 1px;
+    }
+
+    .menu ul li a {
+        background: #2f3036;
+    }
+
+    .menu ul li,
+    .menu li a {
+        width: 100%;
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    input[type=checkbox]:checked~#opciones {
+        display: block;
+    }
+
+    .mostrar-menu {
+        display: block;
+        width: 10%;
+    }
+
+    .menu ul {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+
+    .imgCabecera {
+        width: 100%;
+        margin: 0;
+        min-width: 320px;
+    }
+
+    .imgCabecera img {
+        width: 100%;
+
+
+    }
+
+    .titulo-categorias {
+        display: none;
+    }
+
+    section {
+        min-width: 320px;
+    }
+
+    aside {
+        min-width: 100px;
+        background-color: #19c58900;
+        width: 100%;
+        border-left: 1px solid black;
+        min-width: 320px;
+        height: 100px;
+        background-color: rgba(0, 255, 255, 0);
+    }
+
+    aside .categorias {
+        height: 100px;
+        text-align: center;
+        display: grid;
+        width: 100%;
+        grid-template: "categoria1 categoria2"
+            "categoria3 categoria4";
+    }
+
+    .categoria1 {
+        grid-area: categoria1;
+    }
+
+    .categoria2 {
+        grid-area: categoria2;
+    }
+
+    .categoria3 {
+        grid-area: categoria3;
+    }
+
+    .categoria4 {
+        grid-area: categoria4;
+    }
+
+    aside ul li {
+        font-weight: bold;
+    }
+
+    aside .categorias p {
+        width: 100%;
+        border: 1px solid black;
+        padding: 0;
+    }
+
+    aside .categorias p button {
+        height: 48px;
+        width: 100%;
+
+        border-radius: 2px;
+        line-height: 1;
+        color: #fff;
+        letter-spacing: 0.025em;
+        background: #379aff;
+        padding: 18px 0 11px;
+        cursor: pointer;
+        border: 0;
+        border-radius: 2px;
+        min-width: 120px;
+        overflow: hidden;
+        transform: translate(0%, 0%);
+    }
+
+    aside .categorias p button:after,
+    aside .categorias p button:before {
+        padding: 18px 0 11px;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(-100% - 30px);
+        height: calc(100% - 29px);
+        width: calc(100% + 20px);
+        color: #fff;
+        border-radius: 2px;
+        transform: skew(-25deg);
+    }
+
+    aside .categorias p button:after {
+        background: #fff;
+        transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+        z-index: 0;
+        opacity: 0.8;
+    }
+
+    aside .categorias p button:before {
+        background: #13c276;
+        z-index: 5;
+        transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    aside .categorias p button:hover:after {
+        left: calc(0% - 10px);
+        transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    aside .categorias p button:hover:before {
+        left: calc(0% - 10px);
+        transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    aside .categorias p span {
+        display: block;
+        position: relative;
+        z-index: 5;
+    }
+
+    */ footer {
+        min-width: 320px;
+        display: flex;
+        background: #9b9b9b;
+        justify-content: space-between;
+        width: 100%;
+
+        height: 100px;
+        margin-bottom: 0px;
+        border-top: 0.5px solid black;
+    }
+
+    footer ul {
+        margin: 0;
+        margin-top: 5px;
+        width: 40%;
+        min-width: 10px;
+        text-align: center;
+    }
+
+    footer ul li {
+        margin-top: 5px;
+        margin-bottom: 10px;
+
+    }
+
+    li.contacto a {
+        background-color: #9b9b9b;
+        padding: 5px;
+        margin: 0;
+    }
+
+    li.politica a {
+        background-color: #9b9b9b;
+        padding: 4px;
+        margin: 0;
+        width: 70%;
+
+    }
+
+
+}
