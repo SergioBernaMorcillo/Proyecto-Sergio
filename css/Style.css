@@ -1,0 +1,245 @@
+*{
+    margin: 0 ;
+    padding: 0 ;
+    font-family: 'Merriweather', serif;
+
+}
+@font-face{
+    font-family:"Merriweather";
+    src:url(../font/Merriweather/Merriweather-Black.ttf);
+
+}
+nav{
+    padding:  10px 0!important;
+    
+}
+.navbar{
+    background: #F1C435 !important;
+}
+.navbar-nav{
+    background:rgb(87, 87, 87) !important;
+    color: white;
+}
+.navbar-brand{
+    color:#ffffff!important;
+}
+
+.nav-tabs{
+    border: none !important;
+}
+.active{
+    border-bottom: none !important;
+}
+
+#botonCategorias>i{
+    font-size: 35px;
+}
+#botonCategorias:hover{
+    background: darkgray !important;
+    border: 1px solid white  !important;
+}
+#botonCategorias:hover>i{
+    color: white !important;
+}
+section{
+    background: #329c97;
+}
+div[role="imagenDeFondo"]{
+    height: 125px;
+}
+body{
+    border: 1px solid black !important;
+}
+
+#navbarSupportedContent>.navbar-nav>li:hover{
+    color: black !important;
+}
+
+.navbar-brand:hover{
+    color: rgb(255, 255, 255) !important;
+}
+
+
+.dropdown-menu a:hover{
+    background: rgb(253, 253, 253) !important;
+    color: black !important;
+}
+div.contenido{
+    background: #ECECEC  !important;
+    border: 1px solid black !important;
+}
+.publicacion{
+    background: #CCCCCC !important;
+}
+header > div>.img-fluid{
+    width: 100% !important;
+    height: 125px;
+}
+aside {
+    height: 30px !important;
+    background:rgb(87, 87, 87) !important;
+    border-left: 1px solid black !important;
+
+}
+.nav-tabs>li{
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+   
+}
+.sombraLetras{
+    text-shadow: 0px 0px 10px #070000;
+}
+
+aside .categorias{
+    color:  rgb(71, 71, 71) !important;
+    background:rgb(87, 87, 87) !important;
+}
+
+li.nav-item{
+    height: 40px !important;
+}
+
+aside ul li:first-of-type{
+    border-left: 1px solid black !important;
+}
+aside ul li{
+    border-top: 1px solid black !important;
+    border-right: 1px solid black !important;
+    color: white !important;
+    font-weight: bold;
+
+}
+aside ul li a{
+    color: white !important;
+}
+.active{
+    background: #CCCCCC !important;
+    color:  rgb(71, 71, 71) !important;
+   
+}
+aside ul li.active a{
+
+}
+aside li:hover{
+    color: black !important;
+    background-color: #f2f2f3 !important;
+}
+aside>ul>li.active:hover{
+    background-color:white !important;
+}
+aside li a:hover{
+    color:  rgb(71, 71, 71) !important;
+}
+footer{
+    background: #023532 !important;
+}
+
+.com:nth-of-type(odd){
+    background-color: #c4c4c4 !important;
+}
+.com:nth-of-type(even){
+    background-color: #fafafa !important;
+}
+.sombraImagen{
+    box-shadow: 5px 10px #888888;;
+}
+.inputContador{
+    width:35px !important;
+    background-color: rgb(236, 236, 236) !important;
+    border: 1px solid gray !important;
+    border-radius: 50px;
+    height: 35px;
+}
+
+@media (min-width: 768px ) {
+    
+    .border-bottom{
+        border: none !important;
+    }
+    aside ul li:hover{
+        background: #CCCCCC !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .collapse{
+        padding:.5rem!important
+    }
+    .active{
+        background: #CCCCCC !important;
+    }
+    .dropdown-menu{
+        border: none !important;
+    }
+    .navbar-nav {
+       margin: 0;
+    }
+    aside{
+        height: auto !important;
+    }
+    aside ul{
+        background-color: white;
+    }
+    aside ul li a{
+        color: rgb(71, 71, 71) !important;
+    }
+    aside .categorias{
+        color:  rgb(71, 71, 71) !important;
+        background:rgb(253, 253, 253) !important;
+    }
+    aside ul li:first-of-type{
+        border-left:none !important;
+    }
+    aside ul li{
+        border-bottom:1px solid black !important;
+        border-left: none!important;
+        border-right: none!important;
+    }
+    .navbar-brand{
+        color:#343a40!important;
+    }
+    .navbar-nav{
+        background: #F1C435 !important;
+        color: white;
+    }
+    .contenido{
+        border:none !important;
+    }  
+    .publicacion{
+        border:none !important;
+    }
+    .dropdown-menu{
+        top: 34px;
+        margin-top: 9px;
+        padding: 0px 50px;
+        left: -25px;
+    }
+ 
+    
+
+}
+@media (min-width:1200px) { 
+    
+}
+.inputWrapper {
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    /*Using a background color, but you can use a background image to represent a button*/
+    background-color: rgb(217, 236, 222);
+}
+.fileInput {
+    cursor: pointer;
+    height: 100%;
+    position:absolute;
+    top: 5px;
+    right: 0;
+    z-index: 99;
+    /*This makes the button huge. If you want a bigger button, increase the font size*/
+    font-size:50px;
+    /*Opacity settings for all browsers*/
+    opacity: 0;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+}

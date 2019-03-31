@@ -1,14 +1,37 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    color: rgb(253, 253, 253);
+   
+}
+select{
+    color: black;
+}
+input[type="text"]{
+    color: rgb(17, 17, 17);
+}
+input[type="password"]{
+    color: rgb(8, 8, 8);
+}
+input[type="submit"]{
+    color: rgb(8, 8, 8);
+}
+button{
+    color: black;
+}
+textarea{
+    color: black;
 }
 
 body {
     width: 60%;
     margin: auto;
+}
+
+.nombrePagina {
+    display: none;
 }
 
 .mostrar-menu {
@@ -24,7 +47,8 @@ body {
 
 .menu {
     height: 50px;
-    background: #9b9b9b;
+    background: #023532;
+
     color: white;
     display: flex;
     justify-content: flex-end;
@@ -41,6 +65,7 @@ ul {
 
 .menu ul {
     position: absolute;
+    display: block;
 }
 
 
@@ -57,13 +82,15 @@ ul {
     line-height: 50px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff;
-    background: #9b9b9b;
+    background: #023532;
     text-decoration: none;
 }
+
 .menu ul li:hover a {
-    background: #19c589;
+    background: #329c97;
     border-bottom: 1px solid black;
 }
+
 .menu ul li:hover ul li a {
     background: #f7f7f7;
     border-bottom: 1px solid black;
@@ -78,17 +105,17 @@ ul {
 .menu ul li ul {
     display: none;
 }
-.submenu ul{
-    min-width: 120px;
+
+.submenu ul {
+    min-width: 200px;
     height: 50px;
     width: 29.5%;
 }
-.submenu  a{
+
+.submenu a {
     width: 200px;
     min-width: 200px;
 }
-
-
 
 .imgCabecera {
     width: 100%;
@@ -98,7 +125,7 @@ ul {
 }
 
 .imgCabecera img {
-    
+
     width: 100%;
     margin: 0 0 -6px 0;
 }
@@ -106,13 +133,14 @@ ul {
 section {
     width: 100%;
     min-width: 600px;
-    background-color: #6371c5;
+    background-color: #01202c;
     height: 500px;
+    display: table;
 
 }
 
 aside {
-    background: #379aff;
+    background: #1c6662;
     height: 100%;
     width: 25%;
     float: right;
@@ -122,11 +150,14 @@ aside {
 
 .titulo-categorias {
     display: block;
-    background-color: #9b9b9b;
+    background: #023532;
+
+    color: white;
     padding: 25px;
     width: 100%;
     text-align: center;
 }
+
 aside .categorias {
     margin: auto;
     width: 60%;
@@ -145,7 +176,8 @@ aside .categorias p {
 }
 
 
-aside .categorias p button {
+
+aside .categorias p a {
     padding: 10px 0;
     height: 48px;
     width: 100%;
@@ -155,70 +187,77 @@ aside .categorias p button {
     line-height: 1;
     color: #fff;
     letter-spacing: 0.025em;
-    background: #379aff;
+    background: #329c97;
     padding: 18px 0 11px;
     cursor: pointer;
     border: 0;
     border-radius: 2px;
     min-width: 100px;
     overflow: hidden;
-    transform: translate(0%,0%);
-}
-aside .categorias p button:after,
-aside .categorias p button:before {
-  padding: 18px 0 11px;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: calc(-100% - 30px);
-  height: calc(100% - 29px);
-  width: calc(99% + 20px);
-  color: #fff;
-  border-radius: 2px;
-  transform: skew(-25deg);
+    transform: translate(0%, 0%);
 }
 
-aside .categorias p button:after {
-  background: #fff;
-  transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
-  z-index: 0;
-  opacity: 0.8;
+aside .categorias p a:after,
+aside .categorias p a:before {
+    padding: 18px 0 11px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(-100% - 30px);
+    height: calc(100% - 29px);
+    width: calc(99% + 20px);
+    color: #fff;
+    border-radius: 2px;
+    transform: skew(-25deg);
 }
 
-aside .categorias p button:before {
-  background: #13c276;
-  z-index: 5;
-  transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+aside .categorias p a:after {
+    background: #fff;
+    transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+    z-index: 0;
+    opacity: 0.8;
 }
 
-aside .categorias p button:hover:after {
-  left: calc(0% - 10px);
-  transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+aside .categorias p a:before {
+    background: #4c4850;
+    z-index: 5;
+    transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-aside .categorias p button:hover:before {
-  left: calc(0% - 10px);
-  transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+aside .categorias p a:hover:after {
+    left: calc(0% - 10px);
+    transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-aside .categorias p button span {
+aside .categorias p a:hover:before {
+    left: calc(0% - 10px);
+    transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+aside .categorias p a {
     display: block;
+    text-decoration: none;
+}
+
+aside .categorias p a span {
+
     position: relative;
     z-index: 5;
     top: -5px;
     font-size: 18px;
-  }
+}
 
 footer {
     display: flex;
-    background: #9b9b9b;
-    
+    background: #023532;
+    color: white;
     justify-content: space-between;
     width: 100%;
     min-width: 600px;
     height: 100px;
     border-top: 0.5px solid black;
 }
+
 footer ul {
     margin-top: 2%;
     width: 18%;
@@ -229,10 +268,11 @@ footer ul li {
     float: none;
     margin: none;
 }
-footer ul li a{
+
+footer ul li a {
     float: none;
     margin: none;
-    color: black;
+    color: white;
 }
 
 li.politica {
@@ -250,4 +290,53 @@ li.politica {
 
 footer ul li a {
     width: 100%;
+}
+
+.contenidoIniciarSesion {
+    width: 30%;
+    margin: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+.contenido {
+    width: 40%;
+    margin: auto;
+    position: relative;
+    margin-right: 40%;
+}
+.publi {
+    width: 40%;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+.publi img {
+    width: 100%;
+}
+.contenido>div{
+text-align: center;
+border: 1px solid gray;
+margin-top: 50px;
+width: 100%;
+}
+.contenido>form>div>a{
+    width: 100%;
+}
+.contenido img{
+    width: 100%;
+}
+.form {
+    border-radius: 25px;
+    text-align: center;
+    background: #1c6662;
+    height: 300px;
+    width: 50%;
+    margin: auto;
+}
+.form p input {
+    width: 70%;
+}
+option{
+    color: black;
 }

@@ -1,6 +1,13 @@
 @media screen and (max-width : 420px) {
     * {
-        font-size: 12px;
+        color: black;
+    }
+
+    header,
+    section,
+    aside,
+    footer {
+        color: white;
     }
 
     body {
@@ -8,13 +15,17 @@
         margin: auto;
     }
 
-    .menu {
-        min-width: 320px;
+    .nombrePagina {
+        position: relative;
+        margin: auto;
+        display: block;
     }
 
-    .mostrar-menu {
-        cursor: pointer;
+    .menu {
+        min-width: 328px;
+        background: #023532;
     }
+
 
     .menu ul {
         z-index: 10;
@@ -44,7 +55,12 @@
 
     .mostrar-menu {
         display: block;
-        width: 10%;
+        width: 15%;
+        height: 50px;
+        cursor: pointer;
+        font-size: 26px;
+        background: #023532;
+
     }
 
     .menu ul {
@@ -52,18 +68,17 @@
         top: 50px;
         left: 0;
         width: 100%;
+
     }
 
     .imgCabecera {
         width: 100%;
         margin: 0;
-        min-width: 320px;
+        min-width: 310px;
     }
 
     .imgCabecera img {
         width: 100%;
-
-
     }
 
     .titulo-categorias {
@@ -71,15 +86,17 @@
     }
 
     section {
-        min-width: 320px;
+        width: 100%;
+        min-width: 328px;
+        background-color: #01202c;
+        height: 500px;
     }
 
     aside {
-        min-width: 100px;
         background-color: #19c58900;
         width: 100%;
         border-left: 1px solid black;
-        min-width: 320px;
+        min-width: 328px;
         height: 100px;
         background-color: rgba(0, 255, 255, 0);
     }
@@ -119,7 +136,8 @@
         padding: 0;
     }
 
-    aside .categorias p button {
+    aside .categorias p a {
+        background: #329c97;
         height: 48px;
         width: 100%;
 
@@ -127,7 +145,7 @@
         line-height: 1;
         color: #fff;
         letter-spacing: 0.025em;
-        background: #379aff;
+
         padding: 18px 0 11px;
         cursor: pointer;
         border: 0;
@@ -137,8 +155,8 @@
         transform: translate(0%, 0%);
     }
 
-    aside .categorias p button:after,
-    aside .categorias p button:before {
+    aside .categorias p a:after,
+    aside .categorias p a:before {
         padding: 18px 0 11px;
         content: '';
         position: absolute;
@@ -151,39 +169,39 @@
         transform: skew(-25deg);
     }
 
-    aside .categorias p button:after {
+    aside .categorias p a:after {
         background: #fff;
         transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
         z-index: 0;
         opacity: 0.8;
     }
 
-    aside .categorias p button:before {
-        background: #13c276;
+    aside .categorias p a:before {
+        background: #4c4850;
         z-index: 5;
         transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
     }
 
-    aside .categorias p button:hover:after {
+    aside .categorias p a:hover:after {
         left: calc(0% - 10px);
         transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     }
 
-    aside .categorias p button:hover:before {
+    aside .categorias p a:hover:before {
         left: calc(0% - 10px);
         transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
     }
 
-    aside .categorias p span {
+    aside .categorias p a span {
         display: block;
         position: relative;
         z-index: 5;
     }
 
-    */ footer {
-        min-width: 320px;
+    footer {
+        min-width: 328px;
         display: flex;
-        background: #9b9b9b;
+        background: #023532;
         justify-content: space-between;
         width: 100%;
 
@@ -207,18 +225,15 @@
     }
 
     li.contacto a {
-        background-color: #9b9b9b;
+
         padding: 5px;
         margin: 0;
     }
 
     li.politica a {
-        background-color: #9b9b9b;
+
         padding: 4px;
         margin: 0;
         width: 70%;
-
     }
-
-
 }
