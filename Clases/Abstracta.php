@@ -1,7 +1,6 @@
 <?php
 abstract class Abstracta
 {
-
     private static $db_host = 'localhost';
     private static $db_user = 'root';
     private static $db_pass = '';
@@ -19,7 +18,6 @@ abstract class Abstracta
 	# Conectar a la base de datos
     private function open_connection()
     {
-        
         $this->conn = new mysqli(
             self::$db_host,
             self::$db_user,

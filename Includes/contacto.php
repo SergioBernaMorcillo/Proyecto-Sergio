@@ -1,90 +1,47 @@
-<section class="section">
+<div class="container contact">
+	<div class="row my-auto">
+		<div class="col-md-9 mx-auto  d-none d-xl-block" id="contacto">
+			<h2 class="text-center"><u>Contacto</u></h2>
+			<div class="contact-form">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="fname">Nombre:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="fname" value="<?php if (isset($_SESSION['nombre'])) {
+																						echo $_SESSION['nombre'];
+																					} ?>" name="fname">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="lname">Apellidos:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="lname" value="<?php if (isset($_SESSION['apellidos'])) {
+																						echo $_SESSION['apellidos'];
+																					} ?>" name="lname">
+					</div>
+				</div>
 
-    <!--Section heading-->
-    <h2 class="section-heading h1 pt-4">Contact us</h2>
-    <!--Section description-->
-    <p class="section-description">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        matter of hours to help you.</p>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="asunto">Asunto:</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="asunto" name="asunto">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="comment">Comentario:</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="5" id="comment"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="button" onclick="enviarCorreoContacto()" class="btn btn-success">Enviar datos</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="row">
-
-        <!--Grid column-->
-        <div class="col-md-8 col-xl-9">
-            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form">
-                            <input type="text" id="name" name="name" class="form-control">
-                            <label for="name" class="">Your name</label>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form">
-                            <input type="text" id="email" name="email" class="form-control">
-                            <label for="email" class="">Your email</label>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form">
-                            <input type="text" id="subject" name="subject" class="form-control">
-                            <label for="subject" class="">Subject</label>
-                        </div>
-                    </div>
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-
-                        <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                            <label for="message">Your message</label>
-                        </div>
-
-                    </div>
-                </div>
-                <!--Grid row-->
-
-            </form>
-
-            <div class="center-on-small-only">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-            </div>
-            <div class="status"></div>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-4 col-xl-3">
-            <ul class="contact-icons">
-                <li><i class="fa fa-phone fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
-                </li>
-
-                <li><i class="fa fa-envelope fa-2x"></i>
-                    <p>contact@mdbootstrap.com</p>
-                </li>
-            </ul>
-        </div>
-        <!--Grid column-->
-
-    </div>
-
-</section>
+		<div class="col-md-9 mx-auto d-block d-xl-none">
+			<p class="">Si desea ponerse en contacto con los administradores de la web solo tiene que mandar un email a: <a href="#">sergiobernamorcillo@gmail.com</a></p>
+		</div>
+	</div>
+</div>

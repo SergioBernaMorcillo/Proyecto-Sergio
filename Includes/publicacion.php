@@ -1,4 +1,9 @@
 <?php
+if (isset($_REQUEST['idComentario'])) {
+    require_once("../Clases/Comentario.php");
+    $coment = new Comentario();
+    $coment->deletePorIdComentario($_REQUEST['idComentario']);
+}
 $id_contenido = $_GET['id'];
 if(isset($_POST["enviarComentario"])){
         $id_usuario = $_SESSION['id_usuario'];
@@ -24,26 +29,29 @@ $rows = $contenido->get($id_contenido);
 echo '<div class="col text-center  contenido col-12 col-md-12 w-50 px-0 mx-auto">';
 foreach ($rows as $key => $value) {
     $id_contenido = $value['id_contenido'];
-    $x = "";
-    $y = "";
-    $r = "";
+    $x = "n#" . $value['id_contenido'] . "#";
+    $y = "p#" . $value['id_contenido'] . "#";
+    $r = "r#" . $value['id_contenido'] . "#";
     if (isset($_SESSION['tipoUsr'])) {
         $id_contenido = $value['id_contenido'];
         $x = "n#" . $value['id_contenido']."#".$_SESSION['id_usuario'];
         $y = "p#" . $value['id_contenido']."#".$_SESSION['id_usuario'];
         $r = "r#" . $value['id_contenido']."#".$_SESSION['id_usuario'];
     }
+    $usu = new Usuario();
+    $usuarios = $usu->getPorId($value['id_usuario']);
+    $nombreUsuario = $usuarios[0]['nombre']." ".$usuarios[0]['apellidos'];
+    
     
     echo "<div  class='publicacion  pt-2 pb-2 mt-5  mb-2 border-bottom mx-auto' id=id-" . $value['id_contenido'] . ">";
     echo "<button onclick='maquinariaReportar(\"" . $r . "\")'class='btn btn-warning mr-1 float-right' type='submit' name='botonReportar'><i<i class='fas fa-exclamation'></i></button>";
     echo "<h1 class='text-white sombraLetras'>" . $value['titulo'] . "</h1>";
-    echo "<img class='img-fluid mb-3 px-0 shadow-lg col-11 col-md-8' src='img/" . $value["imagen"] . "'>";
+    echo "<img title='Subido por: ".$nombreUsuario."' style='max-width:450px;' class='img-fluid mb-3 px-0 shadow-lg col-11 col-md-8' src='img/" . $value["imagen"] . "'>";
     echo "<br>";
-    echo "<input id='inputPositivo-" . $value['id_contenido'] . "' type='text' name='inputPositivo' value='" . $value['votos_positivos'] . "' readonly style='width:20px;'>";
+    echo "<input  class='text-center inputContador' id='inputPositivo-" . $value['id_contenido'] . "' type='text' name='inputPositivo' value='" . $value['votos_positivos'] . "' readonly style='width:20px;'>";
     echo "<button  onclick='maquinariaVotar(\"" . $y . "\")' class='mt-1 mb-2  ml-1 mr-5 btn btn-success' type='button' name='botonVotarPositivo'><i class='fas fa-thumbs-up'></i></button>";
     echo "<button  class=' mr-1 mt-1 mb-2  btn btn-danger' onclick='maquinariaVotar(\"" . $x . "\")' type='button' name='botonVotarNegativo'><i class='fas fa-thumbs-down'></i></button>";
-    echo "<input class='' type='text' id='inputNegativo-" . $value['id_contenido'] . "' value='" . $value['votos_negativos'] . "' readonly style='width:20px;'>";
-    
+    echo "<input  class='text-center inputContador' type='text' id='inputNegativo-" . $value['id_contenido'] . "' value='" . $value['votos_negativos'] . "' readonly style='width:20px;'>";
     echo "</div>";
 }
 echo "<hr class='mt-5'>";
@@ -51,7 +59,7 @@ echo "<div class='comentarios  mb-2'>";
 if (isset($_SESSION['tipoUsr'])) {
     $c = $_SESSION['id_usuario']."#". $value['id_contenido'];
     echo "<form  method='POST' action=".$_SERVER['PHP_SELF'] . '?p=publicacion&id='.$id_contenido.">";
-    echo "<textarea  placeholder='Comentar' class=' mt-4 col-12 col-sm-8' id='comentario' name='comentario' style='color:black;'></textarea><br>";
+    echo "<textarea  placeholder='Qué tienes en mente...' class=' mt-4 col-12 col-sm-8' id='comentario' name='comentario' style='color:black;'></textarea><br>";
     echo "<input class='mt-1 mb-2 p-1 btn-success' type='submit' name='enviarComentario'>";
 }
 
@@ -66,7 +74,11 @@ echo "<div class='com '></div>";//sirve para que si no hay ningun comentario se 
 foreach ($rows as $key => $value) {
     if ($value['id_contenido'] == $id_contenido) {
         $user = $usuario->getPorId($value['id_usuario']);
-        echo "<div class='com col-12 col-sm-8 mx-auto mb-2'>";
+        $idComentario= "comentrario-".$value['id_comentario'];
+        echo '<div id='.$idComentario.' class="com col-12 col-sm-8 mx-auto mb-2">';
+                if (isset($_SESSION['tipoUsr']) and $value['id_usuario'] == $_SESSION['id_usuario'] or isset($_SESSION['tipoUsr']) and $_SESSION['tipoUsr'] == "admin") {
+        echo "<button onclick='borrarComentario(".$id_contenido.",". $value['id_comentario'] . ")'class='btn btn-light border float-right' type='button' name='botonBorrarComentario'><i class='fas fa-trash-alt'></i></button>";
+    }
         echo "<p class ='nombreComentario'>".$user[0]['nombre']." ". $user[0]['apellidos']."</p>";
         echo "<p class ='comentario m-0'>" . $value['comentario'] . "</p>";
         echo "</div>";

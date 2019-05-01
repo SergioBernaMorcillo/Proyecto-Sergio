@@ -1,15 +1,15 @@
 <?php
-include("cabecera.php");
+require_once("cabecera.php");
 ?>
 <section class="row justify-content-md-center col-12 container-fluid mx-0 p-0">
     <?php
     if ($contenido == "inicio" or $contenido == "categoria") {
         echo '<aside  class="d-none d-lg-block col-12 col-sm-12  col-md-12 col-lg-3 d-lg-block text-center" id="aside">';
         echo "<ul class='nav row categorias'>";
-        echo '<li class="text-dark nav-item col-6 col-sm-3 col-md-12 "><a class="h-100" href="index.php?p=categoria&c=random"><span>Random</span></a></li>';
-        echo '<li class="nav-item col-6 col-sm-3 col-md-12"><a class="h-100" href="index.php?p=categoria&c=deporte"><span>Deporte</span></a></li>';
-        echo '<li class="nav-item col-6 col-sm-3 col-md-12"><a class="h-100" href="index.php?p=categoria&c=ot"><span >OT</span></a></li>';
-        echo '<li class="nav-item col-6 col-sm-3 col-md-12 "><a class="h-100" href="index.php?p=categoria&c=trollface"><span class="mt-2">Trollface</span></a></li>';
+        echo '<li class="text-dark nav-item col-6 col-sm-3 col-md-12 "><a class="h-100 pb-3" href="index.php?p=categoria&c=random"><span>Random</span></a></li>';
+        echo '<li class="nav-item col-6 col-sm-3 col-md-12"><a class="h-100 pb-3" href="index.php?p=categoria&c=deporte"><span>Deporte</span></a></li>';
+        echo '<li class="nav-item col-6 col-sm-3 col-md-12"><a class="h-100 pb-3" href="index.php?p=categoria&c=ot"><span >OT</span></a></li>';
+        echo '<li class="nav-item col-6 col-sm-3 col-md-12 "><a class="h-100 pb-3" href="index.php?p=categoria&c=trollface"><span class="mt-2">Trollface</span></a></li>';
         echo "</ul>";
         echo '</aside>';
     }
@@ -34,10 +34,8 @@ include("cabecera.php");
     } else if ($contenido == "reportes") {
         include("./includes/reportes.php");
     }
-
-
     ?>
 </section>
 <?php
-include("pie.php");
-?> 
+require_once("pie.php");
+?>

@@ -1,245 +1,488 @@
-*{
-    margin: 0 ;
-    padding: 0 ;
-    font-family: 'Merriweather', serif;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
-@font-face{
-    font-family:"Merriweather";
-    src:url(../font/Merriweather/Merriweather-Black.ttf);
+
+
+@font-face {
+    font-family: "AveriaSerifLibre";
+    src: url(../font/AveriaSerifLibre/AveriaSerifLibre-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url(../font/Merriweather/Merriweather-Black.ttf);
 
 }
-nav{
-    padding:  10px 0!important;
-    
+
+
+nav {
+    padding: 10px 0 !important;
 }
-.navbar{
+
+.navbar {
     background: #F1C435 !important;
-}
-.navbar-nav{
-    background:rgb(87, 87, 87) !important;
-    color: white;
-}
-.navbar-brand{
-    color:#ffffff!important;
-}
-
-.nav-tabs{
     border: none !important;
-}
-.active{
     border-bottom: none !important;
 }
 
-#botonCategorias>i{
-    font-size: 35px;
-}
-#botonCategorias:hover{
-    background: darkgray !important;
-    border: 1px solid white  !important;
-}
-#botonCategorias:hover>i{
-    color: white !important;
-}
-section{
-    background: #329c97;
-}
-div[role="imagenDeFondo"]{
-    height: 125px;
-}
-body{
-    border: 1px solid black !important;
+.navbar-nav {
+    background: rgb(87, 87, 87) !important;
+    color: white;
 }
 
-#navbarSupportedContent>.navbar-nav>li:hover{
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.nav-tabs {
+    border: none !important;
+}
+
+.active {
+    border-bottom: none !important;
+}
+
+#botonCategorias>i {
+    font-size: 35px;
+}
+
+#botonCategorias:hover {
+    background: darkgray !important;
+    border: 1px solid white !important;
+}
+
+#botonCategorias:hover>i {
+    color: white !important;
+}
+
+section {
+    background: rgb(221, 221, 221) !important;
+    min-height: 68.6vh;
+    border: none !important;
+
+}
+
+div[role="imagenDeFondo"] {}
+
+
+#navbarSupportedContent>.navbar-nav>li:hover {
     color: black !important;
 }
 
-.navbar-brand:hover{
+.navbar-brand:hover {
     color: rgb(255, 255, 255) !important;
 }
 
 
-.dropdown-menu a:hover{
+.dropdown-menu a:hover {
     background: rgb(253, 253, 253) !important;
     color: black !important;
 }
-div.contenido{
-    background: #ECECEC  !important;
-    border: 1px solid black !important;
+
+div.contenido {
+    background: #ECECEC !important;
 }
-.publicacion{
+
+.publicacion {
     background: #CCCCCC !important;
 }
-header > div>.img-fluid{
-    width: 100% !important;
-    height: 125px;
+
+header {
+    height: auto !important;
 }
+
+div#carouselExampleControls {
+    height: 80% !important;
+    border: none;
+    border-bottom: none !important;
+}
+
+.carousel-inner>.carousel-item>img {
+    height: 160px !important;
+}
+
 aside {
     height: 30px !important;
-    background:rgb(87, 87, 87) !important;
-    border-left: 1px solid black !important;
+    background: rgb(87, 87, 87) !important;
+    border: none;
 
 }
-.nav-tabs>li{
+
+.nav-tabs>li {
     border-top-left-radius: 5px !important;
     border-top-right-radius: 5px !important;
-   
+
 }
-.sombraLetras{
+
+.sombraLetras {
     text-shadow: 0px 0px 10px #070000;
 }
 
-aside .categorias{
-    color:  rgb(71, 71, 71) !important;
-    background:rgb(87, 87, 87) !important;
+aside .categorias {
+    color: rgb(71, 71, 71) !important;
+    background: rgb(87, 87, 87) !important;
 }
 
-li.nav-item{
+li.nav-item {
     height: 40px !important;
 }
 
-aside ul li:first-of-type{
-    border-left: 1px solid black !important;
-}
-aside ul li{
+
+
+aside ul li {
     border-top: 1px solid black !important;
     border-right: 1px solid black !important;
     color: white !important;
     font-weight: bold;
 
 }
-aside ul li a{
+
+aside ul li a {
     color: white !important;
 }
-.active{
+
+.active {
     background: #CCCCCC !important;
-    color:  rgb(71, 71, 71) !important;
-   
-}
-aside ul li.active a{
+    color: rgb(71, 71, 71) !important;
 
 }
-aside li:hover{
+
+aside li:hover {
     color: black !important;
     background-color: #f2f2f3 !important;
 }
-aside>ul>li.active:hover{
-    background-color:white !important;
-}
-aside li a:hover{
-    color:  rgb(71, 71, 71) !important;
-}
-footer{
-    background: #023532 !important;
+
+aside>ul>li.active:hover {
+    background-color: white !important;
 }
 
-.com:nth-of-type(odd){
+aside li a:hover {
+    color: rgb(71, 71, 71) !important;
+}
+
+
+.com:nth-of-type(odd) {
     background-color: #c4c4c4 !important;
 }
-.com:nth-of-type(even){
+
+.com:nth-of-type(even) {
     background-color: #fafafa !important;
 }
-.sombraImagen{
-    box-shadow: 5px 10px #888888;;
+
+.sombraImagen {
+    box-shadow: 5px 10px #888888;
+    ;
 }
-.inputContador{
-    width:35px !important;
+
+.inputContador {
+    width: 35px !important;
     background-color: rgb(236, 236, 236) !important;
     border: 1px solid gray !important;
     border-radius: 50px;
     height: 35px;
 }
 
-@media (min-width: 768px ) {
-    
-    .border-bottom{
-        border: none !important;
+/**Formato input file**/
+.inputfileDiv {
+    background-color: #FFC312;
+    border-radius: .25em !important;
+}
+
+.inputfileDivVerde {
+    background-color: green;
+    border-radius: .25em !important;
+}
+
+.inputfile {
+
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+
+    cursor: pointer;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: #FFC312;
+    display: inline-block;
+
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background-color: #cccccc;
+}
+
+.inputfile+label {
+    cursor: pointer;
+    /* "hand" cursor */
+
+}
+
+.inputfile:focus+label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+label[for="file"] {
+    margin-bottom: 0px !important;
+    cursor: pointer;
+}
+
+/*****************FORMULARIO DE LOGIN-REGISTRO-COMPARTIR******************/
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    /*height: 370px;*/
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
+
+/************************************/
+footer {
+    background: #F1C435 !important;
+    border: none !important;
+    min-height: 9.4vh;
+}
+
+/*Contacto*/
+
+.col-md-2 {
+    background: #ff9b00;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.contact-info {
+    margin-top: 10%;
+}
+
+.contact-info img {
+    margin-bottom: 5%;
+}
+
+.contact-info h2 {
+    margin-bottom: 1%;
+}
+
+.col-md-9 {
+    background: #fff;
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+}
+
+.contact-form button {
+    background: #25274d;
+    color: #fff;
+    font-weight: 600;
+    width: 25%;
+}
+
+.contact-form button:focus {
+    box-shadow: none;
+}
+
+.table td,
+.table th {
+    text-align: center !important;
+}
+
+thead {
+    background: #F1C435 !important;
+}
+
+div#revisionReportes:nth-of-type(odd) {
+    background: #f1f1f1;
+}
+
+div#revisionReportes:nth-of-type(even) {
+    background: rgb(153, 153, 153);
+}
+
+/*Contacto*/
+@media (min-width: 768px) {
+
+    /**NUEVO**/
+    header {
+        height: auto !important;
     }
-    aside ul li:hover{
+
+    .carousel-inner>.carousel-item>img {
+        height: 200px !important;
+    }
+
+    /**NUEVO**/
+    aside ul li:hover {
         background: #CCCCCC !important;
     }
 }
 
 @media (min-width: 992px) {
-    .collapse{
-        padding:.5rem!important
-    }
-    .active{
-        background: #CCCCCC !important;
-    }
-    .dropdown-menu{
+
+    .border-bottom {
         border: none !important;
     }
-    .navbar-nav {
-       margin: 0;
+
+    section {
+        min-height: 58.6vh;
     }
-    aside{
+
+    .collapse {
+        padding: .5rem !important
+    }
+
+    .active {
+        background: #CCCCCC !important;
+    }
+
+    aside ul li {
+        border-top: 0px solid black !important;
+        border-right: 1px solid black !important;
+        color: white !important;
+        font-weight: bold;
+
+    }
+
+    .dropdown-menu {
+        border: none !important;
+    }
+
+    .navbar-nav {
+        margin: 0;
+    }
+
+    aside {
         height: auto !important;
     }
-    aside ul{
+
+    aside ul {
         background-color: white;
     }
-    aside ul li a{
+
+    aside ul li a {
         color: rgb(71, 71, 71) !important;
+        padding-left: 85px !important;
+        padding-right: 85px !important;
     }
-    aside .categorias{
-        color:  rgb(71, 71, 71) !important;
-        background:rgb(253, 253, 253) !important;
+
+    aside .categorias {
+        color: rgb(71, 71, 71) !important;
+        background: rgb(253, 253, 253) !important;
+        border-right: 1px solid rgb(87, 87, 87) !important;
+        border-left: 1px solid rgb(87, 87, 87) !important;
     }
-    aside ul li:first-of-type{
-        border-left:none !important;
+
+    aside ul li:first-of-type {
+        border-left: none !important;
     }
-    aside ul li{
-        border-bottom:1px solid black !important;
-        border-left: none!important;
-        border-right: none!important;
+
+    aside ul li {
+        border-bottom: 1px solid black !important;
+        border-left: none !important;
+        border-right: none !important;
+        padding-left: 30px;
     }
-    .navbar-brand{
-        color:#343a40!important;
+
+
+    header {
+        height: 300px !important;
     }
-    .navbar-nav{
+
+    div#carouselExampleControls {
+        height: 82% !important;
+    }
+
+    .carousel-inner>.carousel-item>img {
+        height: 255px !important;
+    }
+
+    .navbar-brand {
+        color: #343a40 !important;
+    }
+
+    .navbar-nav {
         background: #F1C435 !important;
         color: white;
     }
-    .contenido{
-        border:none !important;
-    }  
-    .publicacion{
-        border:none !important;
-    }
-    .dropdown-menu{
-        top: 34px;
-        margin-top: 9px;
-        padding: 0px 50px;
-        left: -25px;
-    }
- 
-    
 
+    .publicacion {
+        border: none !important;
+    }
+
+    .dropdown-menu {
+        display: static;
+        top: 34px !important;
+        left: -31px !important;
+    }
+
+    /**Zoom imagen reportes**/
+
+    #imagenReportes {
+        transition: transform .6s;
+        /* Animation */
+    }
+
+    #imagenReportes:hover {
+
+        transform: scale(2);
+        /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
 }
-@media (min-width:1200px) { 
-    
-}
-.inputWrapper {
-    width: 200px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    /*Using a background color, but you can use a background image to represent a button*/
-    background-color: rgb(217, 236, 222);
-}
-.fileInput {
-    cursor: pointer;
-    height: 100%;
-    position:absolute;
-    top: 5px;
-    right: 0;
-    z-index: 99;
-    /*This makes the button huge. If you want a bigger button, increase the font size*/
-    font-size:50px;
-    /*Opacity settings for all browsers*/
-    opacity: 0;
-    -moz-opacity: 0;
-    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
-}
+
+@media (min-width:1200px) {}

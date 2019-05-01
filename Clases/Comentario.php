@@ -47,12 +47,25 @@ class Comentario extends Abstracta
 
 	}
 
+	public function deletePorIdContenido($id_contenido = "")
+	{
+
+		$this->query = "DELETE FROM comentarios WHERE id_contenido ='$id_contenido'";
+		$this->execute_single_query();
+
+	}
+
 	public function deletePorUsu($id_usuario ="")
 	{
 		$this->query = "DELETE FROM comentarios WHERE id_usuario='$id_usuario'";
 		$this->execute_single_query();
 
 	}
+	public function deletePorIdComentario($id_comentario = "")
+	{
+		$this->query = "DELETE FROM comentarios WHERE id_comentario ='$id_comentario'";
+		$this->execute_single_query();
 
+	}
 }
 ?>

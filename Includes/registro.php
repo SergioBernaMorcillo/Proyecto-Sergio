@@ -1,11 +1,60 @@
-<div class="contenido w-100 mx-auto text-center" >
-<form class="form  mx-auto  col-10  col-sm-8 col-md-4" method="post" action="<?php echo $_SERVER['PHP_SELF'] . '?p=registro'; ?>">
-    <h1>Registro</h1>
-    <p> Nombre:<br><input class="w-100" type="text" name="nombre"></p>
-    <p> Apellidos:<br><input class="w-100" type="text" name="apellidos"></p>
-    <p>E-mail:<br><input class="w-100" type="text" name="email"></p>
-    <p> Contraseña:<br><input class="w-100" type="password" name="pass1"></p>
-    <p> Repita la contraseña:<br><input class="w-100" type="password" name="pass2"></p>
-    <input class="w-100" type="submit" value="Enviar" name="EnviarRegistro">
-</form>
-</div>
+<?php
+if (!isset($_SESSION['tipoUsr'])) {
+	?>
+	<div class="container my-auto">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+			<?php
+				if (isset($alertaRegistro)) {
+					echo $alertaRegistro;
+				}
+				?>
+				<div class="card-header">
+					<h3>Introduce tus datos</h3>
+				</div>
+				<div class="card-body">
+					<form method="post" action="<?php echo $_SERVER['PHP_SELF'] . '?p=registro'; ?>">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php if(isset($_POST['nombre'])){echo $_POST['nombre'];}?>" required autofocus>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="apellidos" class="form-control" placeholder="Apellidos" value="<?php if(isset($_POST['apellidos'])){echo $_POST['apellidos'];}?>" required> 
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<input type="text" name="email" class="form-control" placeholder="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>" required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input id="contraseñaRegistro1" type="password" name="pass1" class="form-control" placeholder="Contraseña" required><input style="display:none;" id="mostrarContraseña1" type="checkbox"> <label class="m-0 input-group-text" for="mostrarContraseña1"> <div class="input-group-append"><i id="iconoContraseña1" class="fas fa-eye-slash"></i></label></div>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+								<input id="contraseñaRegistro2" type="password" name="pass2" class="form-control" placeholder="Contraseña" required><input style="display:none;" id="mostrarContraseña2" type="checkbox"> <label class="m-0 input-group-text" for="mostrarContraseña2"> <div class="input-group-append"><i id="iconoContraseña2" class="fas fa-eye-slash"></i></label></div>
+						</div>
+					
+						<div class="form-group">
+							<input type="submit" name="EnviarRegistro" value="Enviar" class="btn float-right login_btn">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
+} else {
+	     echo "<script>window.location = 'https://memelon.000webhostapp.com/index.php?p=inicio'</script>";
+}
+?>

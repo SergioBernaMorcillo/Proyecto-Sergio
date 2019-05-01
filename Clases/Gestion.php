@@ -50,6 +50,13 @@ class Gestion extends Abstracta
 		$this->execute_single_query();
 
 	}
+	public function deletePorIdContenido($id_contenido = "")
+	{
+
+		$this->query = "DELETE FROM gestion WHERE id_contenido ='$id_contenido'";
+		$this->execute_single_query();
+
+	}
 
 
 	public function deletePorUsu($id_usuario = "")

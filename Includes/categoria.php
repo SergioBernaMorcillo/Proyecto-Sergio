@@ -69,11 +69,9 @@
         $allRows = $contenido->getCategoria($categoria);
         $totalPublicaciones = count($allRows);
         $cont = new Contenido();
-        $memes = $cont->getPaginado($inicio,$categoria);
+        $memes = $cont->getPaginado($inicio, $categoria);
 
-    $paginas = ceil($totalPublicaciones / 10);
-
-
+        $paginas = ceil($totalPublicaciones / 10);
         if (count($memes) == 0) {
             echo "<div  class='publicacion col-13 col-md-12 mt-5 mb-5 border-bottom'>";
             echo "No se han encontrado publicaciones";
@@ -81,9 +79,10 @@
         }
         foreach ($memes as $key => $value) {
 
-            $x = "";
-            $y = "";
-            $r = "";
+            $x = "n#" . $value['id_contenido'] . "#";
+            $y = "p#" . $value['id_contenido'] . "#";
+            $r = "r#" . $value['id_contenido'] . "#";
+            
             if (isset($_SESSION['tipoUsr'])) {
                 $x = "n#" . $value['id_contenido'] . "#" . $_SESSION['id_usuario'];
                 $y = "p#" . $value['id_contenido'] . "#" . $_SESSION['id_usuario'];
@@ -95,7 +94,7 @@
             }
             echo "<button onclick='maquinariaReportar(\"" . $r . "\")'class='btn btn-warning mr-1 float-right' type='submit' name='botonReportar'><i<i class='fas fa-exclamation'></i></button>";
             echo "<br><h1 class='mt-3 mb-3 text-white sombraLetras'>" . $value['titulo'] . "</h1>";
-            echo "<a href='index.php?p=publicacion&id=" . $value['id_contenido'] . "'><img class='px-0 mb-3 shadow-lg img-fluid col-12 col-md-8' src='img/" . $value["imagen"] . "'></a>";
+            echo "<a href='index.php?p=publicacion&id=" . $value['id_contenido'] . "'><img style='max-width:450px;' class='px-0 mb-3 shadow-lg img-fluid col-12 col-md-8' src='img/" . $value["imagen"] . "'></a>";
             echo "<br>";
             echo "<input  class='text-center inputContador' id='inputPositivo-" . $value['id_contenido'] . "' type='text' name='inputPositivo' value='" . $value['votos_positivos'] . "' readonly'>";
             echo "<button  onclick='maquinariaVotar(\"" . $y . "\")' class='mt-1 mb-2  ml-1 mr-5 btn btn-success' type='button' name='botonVotarPositivo'><i class='fas fa-thumbs-up'></i></button>";
@@ -106,36 +105,37 @@
     }
 
 
-//Paginacion
-
-echo '<nav class="mx-auto w-25" aria-label="Page navigation example">';
-echo '<ul class="pagination">';
-if ($inicio != 1) {
-    echo '<li class="page-item"><a class="page-link" href="index.php?p=categoria&c='.$categoria.'&inicio=' . ($inicio - 1) . '">Anterior</a></li>';
-}
-if($inicio>2){
-    echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c='.$categoria.'&inicio=' . ( $inicio-2) . '">'.($inicio-2).'</a></li>';
-    }
-if($inicio>1){
-    echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c='.$categoria.'&inicio=' . ( $inicio-1) . '">'.($inicio-1).'</a></li>';
-}
-
-if($paginas!=1){
-echo '<li class="page-item"><a  class="page-link active" href="index.php?p=categoria&c='.$categoria.'&inicio=' . ( $inicio) . '">'.($inicio).'</a></li>';
-}
-
-if($inicio != $paginas ){
-    echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c='.$categoria.'&inicio=' . ( $inicio+1) . '">'.($inicio+1).'</a></li>';
-}
-if($inicio < $paginas-1 ){
-    echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c='.$categoria.'&inicio=' . ( $inicio+2) . '">'.($inicio+2).'</a></li>';
-    }
-
-    if($inicio != $paginas ){
-        echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c='.$categoria.'&inicio=' . ( $inicio+1) . '">Siguiente</a></li>';
+    //Paginacion
+    if (count($memes) > 0) {
+        echo '<nav class="w-100  d-flex justify-content-center">';
+        echo '<ul class="mx-auto pagination ">';
+        if ($inicio != 1) {
+            echo '<li class="page-item"><a class="page-link" href="index.php?p=categoria&c=' . $categoria . '&inicio=' . ($inicio - 1) . '">Anterior</a></li>';
+        }
+        if ($inicio > 2) {
+            echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c=' . $categoria . '&inicio=' . ($inicio - 2) . '">' . ($inicio - 2) . '</a></li>';
+        }
+        if ($inicio > 1) {
+            echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c=' . $categoria . '&inicio=' . ($inicio - 1) . '">' . ($inicio - 1) . '</a></li>';
         }
 
-echo '</ul>';
-echo '</nav>';
+        if ($paginas != 1) {
+            echo '<li class="page-item"><a  class="page-link active" href="index.php?p=categoria&c=' . $categoria . '&inicio=' . ($inicio) . '">' . ($inicio) . '</a></li>';
+        }
+
+        if ($inicio != $paginas) {
+            echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c=' . $categoria . '&inicio=' . ($inicio + 1) . '">' . ($inicio + 1) . '</a></li>';
+        }
+        if ($inicio < $paginas - 1) {
+            echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c=' . $categoria . '&inicio=' . ($inicio + 2) . '">' . ($inicio + 2) . '</a></li>';
+        }
+
+        if ($inicio != $paginas) {
+            echo '<li class="page-item"><a  class="page-link" href="index.php?p=categoria&c=' . $categoria . '&inicio=' . ($inicio + 1) . '">Siguiente</a></li>';
+        }
+
+        echo '</ul>';
+        echo '</nav>';
+    }
     ?>
-</div> 
+</div>
