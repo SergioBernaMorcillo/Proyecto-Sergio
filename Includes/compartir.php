@@ -1,11 +1,11 @@
 <?php
 if (isset($_SESSION['tipoUsr'])) {
     $tipos = array('image/jpeg', 'image/gif', "image/png");
-    echo '<div class="col  text-center publicacion p-0">';
-    $arrayCategorias = array("random", "deporte", "ot", "trollface");
+    echo '<div class="col  text-center p-0">';
+    $arrayCategorias = array("aleatorio", "deporte", "videojuegos", "trollface");
     if (isset($_POST['botonCompartir'])) {
         if (!empty($_POST['titulo']) && $_POST['opcionesCategorias'] != "porDefecto") {
-            if ($_FILES['imagen']['size'] <= 19000000) {
+            if ($_FILES['imagen']['size'] <= 20000000) {
                 if (in_array($_FILES['imagen']['type'], $tipos)) {
                     if (is_uploaded_file($_FILES['imagen']['tmp_name'])) { //sube la seleccionada imagen si todo esta correcto
                         $nombreDirectorio = "img/";
@@ -20,9 +20,13 @@ if (isset($_SESSION['tipoUsr'])) {
                         $cont = new Contenido();
                         $resultado = $cont->getTitulo($_POST['titulo']);
                         if (empty($resultado)) {
+                            $titulo =$_POST['titulo'];
+                            if (strpos($titulo, ' ')==false) {
+                                $titulo = chunk_split_unicode($titulo,10);
+                            }
                             $datos = array(
                                 'id_usuario' => $_SESSION['id_usuario'],
-                                'titulo' => $_POST['titulo'],
+                                'titulo' => $titulo,
                                 'imagen' => $nombreFichero,
                                 'votos_positivos' => '0',
                                 'votos_negativos' => '0',
@@ -43,7 +47,7 @@ if (isset($_SESSION['tipoUsr'])) {
                     $contenido = "compartir";
                 }
             } else {
-                $alertaCompartir = '<div  id="alertaCompartir" class="alert alert-danger "><strong>El tamaño de la imagen es muy grande (MAX 1.99MB)</strong> <a href="#" class="alert-link"></a></div>';
+                $alertaCompartir = '<div  id="alertaCompartir" class="alert alert-danger "><strong>El tamaño de la imagen excede lo permitido. (MAX 2MB)</strong> <a href="#" class="alert-link"></a></div>';
                 $contenido = "compartir";
             }
         } else {
@@ -100,6 +104,17 @@ if (isset($_SESSION['tipoUsr'])) {
     </div>
 <?php
 } else {
-    echo "<script>window.location = 'https://memelon.000webhostapp.com/index.php?p=inicio'</script>";
+    echo "<script>window.location = '". $_SERVER['PHP_SELF']."?p=categoria&c=aleatorio'</script>";
+}
+
+function chunk_split_unicode($str, $l = 76, $e = "\r\n") {
+    $tmp = array_chunk(
+        preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY), $l);
+    $str = "";
+    foreach ($tmp as $t) {
+        $str .= join("", $t) . $e;
+    }
+    return $str;
 }
 ?>
+

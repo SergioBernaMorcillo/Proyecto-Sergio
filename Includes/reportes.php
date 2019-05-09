@@ -45,12 +45,12 @@ if (isset($_SESSION['tipoUsr']) and $_SESSION['tipoUsr'] == "admin") {
         }
     }
     if ($cont == 0) {
-        echo "<div  class='publicacion col-13 col-md-12 mt-5 mb-5 border-bottom'>";
-        echo "No se han encontrado publicaciones";
+        echo "<div  class='bg-white  p-3 col-13 col-md-12 mt-5 mb-5 border-bottom text-center rounded'>";
+        echo "<p class='rounded'>No se han encontrado publicaciones<p>";
         echo "</div>";
     }
     echo "</div>";
 } else {
-    echo "<script>window.location = 'https://memelon.000webhostapp.com/index.php?p=inicio'</script>";
+    echo "<script>window.location = '" . $_SERVER['PHP_SELF'] . "?p=categoria&c=aleatorio'</script>";
 }
 ?>

@@ -1,23 +1,21 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Permanent_Marker', Arial, sans-serif;
 
-}
-
-
-@font-face {
-    font-family: "AveriaSerifLibre";
-    src: url(../font/AveriaSerifLibre/AveriaSerifLibre-Regular.ttf);
 }
 
 @font-face {
-    font-family: "Merriweather";
-    src: url(../font/Merriweather/Merriweather-Black.ttf);
-
+    font-family: "Permanent_Marker";
+    src: url(../font/Permanent_Marker/PermanentMarker-Regular.ttf);
 }
-
-
+@font-face {
+    font-family: "Indie_Flower";
+    src: url(../font/BalooThambi-Regular.ttf);
+}
+html{
+    background: #CCCCCC !important;
+}
 nav {
     padding: 10px 0 !important;
 }
@@ -48,7 +46,9 @@ nav {
 #botonCategorias>i {
     font-size: 35px;
 }
-
+.titulo{
+    font-size:55px !important;
+}
 #botonCategorias:hover {
     background: darkgray !important;
     border: 1px solid white !important;
@@ -59,7 +59,7 @@ nav {
 }
 
 section {
-    background: rgb(221, 221, 221) !important;
+    background: rgb(231, 231, 231) !important;
     min-height: 68.6vh;
     border: none !important;
 
@@ -68,8 +68,12 @@ section {
 div[role="imagenDeFondo"] {}
 
 
-#navbarSupportedContent>.navbar-nav>li:hover {
+/*#navbarSupportedContent>.navbar-nav>li:hover {
     color: black !important;
+}*/
+
+#navbarSupportedContent>ul.navbar-nav>li:hover {
+    background: rgb(124, 124, 124) !important;
 }
 
 .navbar-brand:hover {
@@ -83,11 +87,11 @@ div[role="imagenDeFondo"] {}
 }
 
 div.contenido {
-    background: #ECECEC !important;
+    background: rgb(87, 87, 87) !important;
 }
 
 .publicacion {
-    background: #CCCCCC !important;
+    background: white !important;
 }
 
 header {
@@ -144,10 +148,12 @@ aside ul li a {
     color: white !important;
 }
 
-.active {
-    background: #CCCCCC !important;
+.active{
+   
+}
+aside>ul>li.active span{
+    background: rgb(255, 255, 255) !important;
     color: rgb(71, 71, 71) !important;
-
 }
 
 aside li:hover {
@@ -175,6 +181,10 @@ aside li a:hover {
 .sombraImagen {
     box-shadow: 5px 10px #888888;
     ;
+}
+
+.cSelec {
+    background-color: rgb(255, 241, 197);
 }
 
 .inputContador {
@@ -318,9 +328,7 @@ footer {
 
 .col-md-9 {
     background: #fff;
-    padding: 3%;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .contact-form label {
@@ -344,7 +352,7 @@ footer {
 }
 
 thead {
-    background: #F1C435 !important;
+    background: rgb(233, 209, 132) !important;
 }
 
 div#revisionReportes:nth-of-type(odd) {
@@ -353,6 +361,10 @@ div#revisionReportes:nth-of-type(odd) {
 
 div#revisionReportes:nth-of-type(even) {
     background: rgb(153, 153, 153);
+}
+
+.footer-copyright {
+    background: rgb(160, 132, 39) !important;
 }
 
 /*Contacto*/
@@ -415,10 +427,14 @@ div#revisionReportes:nth-of-type(even) {
         background-color: white;
     }
 
+    .enlaceAside {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
     aside ul li a {
         color: rgb(71, 71, 71) !important;
-        padding-left: 85px !important;
-        padding-right: 85px !important;
     }
 
     aside .categorias {
@@ -463,6 +479,9 @@ div#revisionReportes:nth-of-type(even) {
 
     .publicacion {
         border: none !important;
+    }
+    #navbarSupportedContent>ul.navbar-nav>li:hover {
+        background: none !important;
     }
 
     .dropdown-menu {

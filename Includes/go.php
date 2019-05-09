@@ -7,10 +7,6 @@ $letra = $_REQUEST['letra'];
 $id_contenido = $_REQUEST['id_contenido'];
 $id_usuario = $_REQUEST['id_usuario'];
 
-
-
-    
-
 $x = new Contenido();
 $rows = $x->get($id_contenido);
 $g = new Gestion();

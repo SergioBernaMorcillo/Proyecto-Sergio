@@ -6,7 +6,7 @@ include("Clases/Usuario.php");
 include("Clases/Contenido.php");
 include("Clases/Comentario.php");
 include("Clases/Gestion.php");
-$contenido = "inicio";
+$contenido = "categoria";
 if (isset($_GET['d'])) {
     session_unset();
     session_destroy();
@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['nombre'] = $value['nombre'];
                 $_SESSION['apellidos'] = $value['apellidos'];
                 $_SESSION['email'] = $value['email'];
-                $contenido = "inicio";
+                echo "<script>window.location = '". $_SERVER['PHP_SELF']."?p=categoria&c=aleatorio'</script>";
             } else {
                 $alerta = '<div  id="alertaReportar" class="alert alert-danger "><strong>Datos incorrectos.</strong> <a href="#" class="alert-link"></a></div>';
                 $contenido = "iniciarSesion";
@@ -48,9 +48,10 @@ if (isset($_POST['EnviarRegistro'])) {
             $rows = $u->get($_POST['email']);
             if (count($rows) == 0) {
                 $x = new Usuario();
+
                 $datos = array(
-                    'nombre' => $_POST['nombre'],
-                    'apellidos' => $_POST['apellidos'],
+                    'nombre' => ucfirst($_POST['nombre']),
+                    'apellidos' => ucfirst($_POST['apellidos']),
                     'email' => $_POST['email'],
                     'pas' => $_POST['pass1'],
                     'tipoUsr' => 'usuario'
@@ -87,12 +88,11 @@ if (isset($_POST['EnviarRegistro'])) {
     <link rel="stylesheet" href="./css/Style.css">
 
 </head>
-
 <body class="container-fluid mx-auto p-0 col-10 col-12 col-md-11 col-lg-10 col-xl-8 shadow-lg">
     <header>
         <div class="topnav border-bottom border-secondary" role="navigation">
             <nav class="navbar navbar-expand-lg p-0 ">
-                <a class="navbar-brand ml-4 text-dark" href="index.php?p=inicio">MemeLón</a>
+                <a style="font-size:26px;"class="navbar-brand ml-4 text-dark" href="index.php?p=categoria&c=aleatorio">MemeLón</a>
                 <button class="navbar-toggler border border-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars text-white"></i>
                 </button>
@@ -100,7 +100,7 @@ if (isset($_POST['EnviarRegistro'])) {
                     <ul class="navbar-nav">
 
                         <li class="nav-item w-100">
-                            <a class="navbar-brand px-2 col-12 text-center border-bottom" href="index.php?p=inicio"><span>Inicio</span></a>
+                            <a class="navbar-brand px-2 col-12 text-center border-bottom" href="index.php?p=categoria&c=aleatorio"><span>Inicio</span></a>
                         </li>
 
                         <?php
@@ -109,7 +109,7 @@ if (isset($_POST['EnviarRegistro'])) {
                             echo '<a class="navbar-brand  px-2 col-12 text-center border-bottom" href="index.php?p=compartir"><span>Compartir</span></a>';
                             echo '</li>';
                             echo '<li class="nav-link dropdown ">';
-                            echo '<a class="navbar-brand mt-1 col-12  h-100 px-2 mx-auto  text-center p-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span> ' . $_SESSION['nombre'] . " " . $_SESSION['apellidos'] . '  <i class="far fa-arrow-alt-circle-down"></i></span></a>';
+                            echo '<a class="navbar-brand mt-1 col-12  h-100 px-2 mx-auto  text-center p-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span> ' . $_SESSION['nombre'] . " " . $_SESSION['apellidos'] . '  <i class="fas fa-chevron-circle-down"></i></span></a>';
                             echo '<div class="dropdown-menu mt-3 w-100 px-2 mx-0 bg-secondary"  aria-labelledby="navbarDropdown" aria-haspopup="true">';
 
                             if ($_SESSION['tipoUsr'] == "admin") {
