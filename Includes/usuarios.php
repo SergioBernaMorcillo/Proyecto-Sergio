@@ -31,13 +31,13 @@ if (isset($_REQUEST['id']) or isset($_SESSION['tipoUsr']) and $_SESSION['tipoUsr
     $usuarios = $usu->getPaginado($inicio);
 
     $paginas = ceil($totalPublicaciones / 10);
-    echo "<h2 class='mt-4 mb-4 mx-auto text-white sombraLetras'><u>Usuarios Registrados</u></h2>";
-    echo "<table class='ml-1 ml-lg-5 mr-1 mr-lg-5 table table-striped'>";
+    echo "<h2 class='mt-4 mb-4 mx-auto text-black '><u>Usuarios Registrados</u></h2>";
+    echo "<div class='table-responsive ml-1 mr-1 mr-lg-5 ml-lg-5'><table class='table table-striped '>";
     echo "<thead><tr class='border px-0'>";
     echo "<th scope='col' class='px-0 border'>ID</th>";
     echo "<th scope='col' class='px-0 d-none d-sm-table-cell border'>Nombre</th>";
     echo "<th scope='col' class='px-0 d-none d-md-table-cell border'>Apellidos</th>";
-    echo "<th scope='col' class='px-0 border '>Email</th>";
+    echo "<th scope='col' class='px-0 border'>Email</th>";
     echo "<th scope='col' class='px-0 d-none d-md-table-cell  border'>Contraseña</th>";
     echo "<th scope='col' class='px-0 border'>Tipo</th>";
     echo "<th scope='col' class='px-0 border'>Borrar</th>";
@@ -57,7 +57,7 @@ if (isset($_REQUEST['id']) or isset($_SESSION['tipoUsr']) and $_SESSION['tipoUsr
         }
         echo "</tr>";
     }
-    echo "</table>";
+    echo "</table></div>";
     echo '<a  class="mx-auto" target="_blank" href="./pdf/listaUsuarios.php"><u>Descargar pdf</u></a>';
     // echo '<button class="btn btn-success mx-auto w-25" ><i class="fa fa-download"></i> Descargar pdf</button>';
 

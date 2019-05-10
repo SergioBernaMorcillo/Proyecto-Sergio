@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
 
         $usu = new Usuario();
         $rows = $usu->get($_POST['email']);
-        if(count($rows)==0){
+        if (count($rows) == 0) {
             $alerta = '<div  id="alertaReportar" class="alert alert-danger "><strong>No existe ningún usuario con el email especificado.</strong> <a href="#" class="alert-link"></a></div>';
             $contenido = "iniciarSesion";
         }
@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['nombre'] = $value['nombre'];
                 $_SESSION['apellidos'] = $value['apellidos'];
                 $_SESSION['email'] = $value['email'];
-                echo "<script>window.location = '". $_SERVER['PHP_SELF']."?p=categoria&c=aleatorio'</script>";
+                echo "<script>window.location = '" . $_SERVER['PHP_SELF'] . "?p=categoria&c=aleatorio'</script>";
             } else {
                 $alerta = '<div  id="alertaReportar" class="alert alert-danger "><strong>Datos incorrectos.</strong> <a href="#" class="alert-link"></a></div>';
                 $contenido = "iniciarSesion";
@@ -88,11 +88,13 @@ if (isset($_POST['EnviarRegistro'])) {
     <link rel="stylesheet" href="./css/Style.css">
 
 </head>
-<body class="container-fluid mx-auto p-0 col-10 col-12 col-md-11 col-lg-10 col-xl-8 shadow-lg">
+<!--<body class="container container-fluid mx-auto p-0 col-10 col-12 col-md-11 col-lg-11 col-xl-8 shadow-lg"> -->
+
+<body class="container p-0 shadow-lg">
     <header>
         <div class="topnav border-bottom border-secondary" role="navigation">
             <nav class="navbar navbar-expand-lg p-0 ">
-                <a style="font-size:26px;"class="navbar-brand ml-4 text-dark" href="index.php?p=categoria&c=aleatorio">MemeLón</a>
+                <a style="font-size:26px;" class="navbar-brand ml-4 text-dark" href="index.php?p=categoria&c=aleatorio">MemeLón</a>
                 <button class="navbar-toggler border border-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars text-white"></i>
                 </button>
@@ -105,7 +107,7 @@ if (isset($_POST['EnviarRegistro'])) {
 
                         <?php
                         if (isset($_SESSION['tipoUsr'])) {
-                            echo '<li class="nav-item ">';
+                            echo '<li class="nav-item">';
                             echo '<a class="navbar-brand  px-2 col-12 text-center border-bottom" href="index.php?p=compartir"><span>Compartir</span></a>';
                             echo '</li>';
                             echo '<li class="nav-link dropdown ">';

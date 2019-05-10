@@ -115,13 +115,13 @@ if (isset($_GET['inicio'])) {
         $nombreUsuario = $usuarios[0]['nombre']." ".$usuarios[0]['apellidos'];
     
 
-        echo "<div  class='publicacion col-13 col-md-12 mt-0 pt-4 mb-2 border-bottom' id=id-" . $value['id_contenido'] . ">";
+        echo "<div  class='publicacion col-13 col-md-12 mt-0 pt-4 mb-2 pb-3 border-bottom' id=id-" . $value['id_contenido'] . ">";
         if (isset($_SESSION['tipoUsr']) and $value['id_usuario'] == $_SESSION['id_usuario'] or isset($_SESSION['tipoUsr']) and $_SESSION['tipoUsr'] == "admin") {
             echo "<button onclick='borrarPublicacion(" . $value['id_contenido'] . ")'class='btn btn-light border float-right' type='button' name='botonBorrarPublicacion'><i class='fas fa-trash-alt'></i></button>";
         }
                 
         echo "<button onclick='maquinariaReportar(\"" . $r . "\")'class='btn btn-warning mr-1 float-right' type='submit' name='botonReportar'><i<i class='fas fa-exclamation'></i></button>";
-        echo "<br><h1 class='mt-3 mb-3 mx-auto text-white sombraLetras titulo'><u>" . $value['titulo'] . "</u></h1>";
+        echo "<br><h1 class='mt-3 mb-3 mx-auto text-black titulo'>" . $value['titulo'] . "</h1>";
         echo "<a href='index.php?p=publicacion&id=" . $value['id_contenido'] . "'><img title='Subido por: ".$nombreUsuario."'style='max-width:550px;' class='rounded mb-3 px-0 shadow-lg img-fluid col-12 col-md-8 hoverable' src='img/" . $value["imagen"] . "'></a>";
         echo "<br>";
         echo "<input  class='text-center inputContador' id='inputPositivo-" . $value['id_contenido'] . "' type='text' name='inputPositivo' value='" . $value['votos_positivos'] . "' readonly>";

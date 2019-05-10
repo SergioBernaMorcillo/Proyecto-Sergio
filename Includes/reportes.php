@@ -27,8 +27,8 @@ if (isset($_SESSION['tipoUsr']) and $_SESSION['tipoUsr'] == "admin") {
 
     $rows = $cont->getReportados();
     $cont = 0;
-    echo "<div class='mt-1 container col-md-10 text-left'>";
-    echo "<br><h1 class='mt-3 mb-5 mx-auto text-center text-white sombraLetras'><u>Revisión de reportes</u></h1>";
+    echo "<div class='mt-1 container  col-md-10 text-left'>";
+    echo "<br><h1 class='mt-3 mb-5 mx-auto text-center text-black'><u>Revisión de reportes</u></h1>";
     foreach ($rows as $key => $value) {
         if ($value['reportes'] >= 5) {
             echo "<div id='revisionReportes' class='mb-2 row'>";

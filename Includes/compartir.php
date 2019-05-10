@@ -72,7 +72,7 @@ if (isset($_SESSION['tipoUsr'])) {
                     <form class="mt-5 mb-5" action="<?php echo $_SERVER['PHP_SELF'] . "?p=compartir"; ?>" method="POST" enctype="multipart/form-data">
                         <div class="input-group form-group">
 
-                            <input class="form-control" type="text" maxlength="30" placeholder="Titulo" name="titulo" required value="<?php if (isset($_POST['titulo'])) { echo $_POST['titulo'];} ?>">
+                            <input class="form-control" type="text" maxlength="100" placeholder="Titulo" name="titulo" required value="<?php if (isset($_POST['titulo'])) { echo $_POST['titulo'];} ?>">
                         </div>
                         <div class="input-group form-group">
                             <div  id="botonFile" class="inputfileDiv text-white p-2 pb-0 mx-auto">
